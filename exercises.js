@@ -70,6 +70,13 @@ console.log(login("somethingelse")); // returns <-- undefined
  * Console.log your result.
 */
 
+function isGreaterThan (first, second) {
+  if (first > second) {
+    return true;
+  }
+}
+console.log(isGreaterThan(2,1)); // return <-- true
+console.log(isGreaterThan(1,2)); // return <-- undefined
 
 
 /*
