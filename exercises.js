@@ -91,6 +91,13 @@ console.log(isGreaterThan(1,2)); // return <-- undefined
  * Console.log your result.
 */
 
+function mustBeTrue (boo) {
+  if (boo === true) {
+    return true;
+  }
+}
+console.log(mustBeTrue(true));
+console.log(mustBeTrue(false));
 
 
 /*
