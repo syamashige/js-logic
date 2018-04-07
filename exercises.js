@@ -112,7 +112,19 @@ console.log(mustBeTrue(false));
  * Console.log your result.
 */
 
+/*
+function bigBird (word) {
+  if (word.length === 2) { // this didn't work!
+    return "Word to Big Bird!";
+  }
+}
+console.log(bigBird("word"));
+console.log(bigBird("big"));
+*/
 
+function bigBird (word) {
+  if 
+}
 
 /*
  * #6
