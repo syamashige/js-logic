@@ -158,6 +158,16 @@ console.log(isEqual("first","second"));
  * Console.log your result.
 */
 
+function notEqual(first, second) {
+  if (first !== second) {
+    return "Opposites do attact.";
+  }
+  else {
+    return "Cause it's like you're my mirror.";
+  }
+}
+console.log(notEqual("first","second"));
+console.log(notEqual("first","first"));
 
 /*
  * #8
