@@ -336,6 +336,27 @@ console.log(moneyTrain(101));
  * Console.log budget and doughnutBought again.
 */ 
 
+var budget = 22;
+var doughnutPrice = 2;
+var doughnutBought = 1;
+
+function buyDoughnut () {          
+  if (budget >= doughnutPrice) {      
+    budget -= doughnutPrice;      //Why doesn't this need to have a "return"?
+    doughnutBought++; 
+  }
+}
+
+console.log(buyDoughnut());
+console.log(budget);
+console.log(doughnutBought);
+
+console.log(buyDoughnut());
+console.log(budget);
+console.log(doughnutBought);
+
+
+
 /*Final Boss*/
 /*Create a function name dailySpecials which takes in a parameter: `special`.
 Inside the function, create a switch statement that will check the daily specials of your favorite restaurant (or make up your own daily specials for each day of the week.*/
