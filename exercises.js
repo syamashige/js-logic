@@ -55,7 +55,7 @@ function login (password) {
   }
 }
 console.log(login("test1234"));
-console.log(login("somethingelse"));
+console.log(login("somethingelse")); // returns <-- undefined
 
 /*
  * #3
