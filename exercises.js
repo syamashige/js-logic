@@ -355,12 +355,36 @@ console.log(buyDoughnut());
 console.log(budget);
 console.log(doughnutBought);
 
-
-
 /*Final Boss*/
 /*Create a function name dailySpecials which takes in a parameter: `special`.
 Inside the function, create a switch statement that will check the daily specials of your favorite restaurant (or make up your own daily specials for each day of the week.*/
 
+function dailySpecials (special) {
+  switch (special) {
+    case "Monday":
+      pie = "Apple Pie";
+      break;
+    case "Tuesday":
+      pie = "Banana Cream Pie";
+      break;
+    case "Wednesday":
+      pie = "Haupia Pie";
+      break;
+    case "Thursday":
+      pie = "Chocolate Cream Pie";
+      break;
+    case "Friday":
+      pie = "Pumpkin Pie";
+      break;       
+  }
+ return "Today's special is " + pie + ".";
+}
+
+console.log(dailySpecials("Monday"));
+console.log(dailySpecials("Tuesday"));
+console.log(dailySpecials("Wednesday"));
+console.log(dailySpecials("Thursday"));
+console.log(dailySpecials("Friday"));
 
 
 /*
@@ -390,12 +414,25 @@ for (var i = 0; i<toyotaModels.length; i++){
  * "Player: 5"
 */
 
+var players = ["Player: 1", "Player: 2", "Player: 3", "Player: 4", "Player: 5"];
+
+//function player() {
+  for (var i = 0; i<players.length; i++) {
+    console.log("Next player is " + players[i]);
+  }
+//}
+//console.log(player(); // With the function - returned an "undefined" at the end
+
 
 /* 
  * #16
  * Create a for loop that will iterate and console.log each item in the array below:
 */
   var myFavFoods = ["lemon bar", "carrot cake", "nachos", "bacon cheeseburger", "ramen", "sweet potato fries", "chimichanga"];
+
+  for (var i = 0; i<myFavFoods.length; i++) {
+    console.log("My favorite food is " + myFavFoods[i] + ".");
+  }
 
 
 /*
@@ -413,6 +450,12 @@ for (var i = 0; i<toyotaModels.length; i++){
  * Console.log your result.
 */
 
+var numArray = [1, 2, 3, 4, 5];
+var total = 0;
+
+function sumItUp (arr) {
+  
+}
 
 
 /*
