@@ -112,19 +112,14 @@ console.log(mustBeTrue(false));
  * Console.log your result.
 */
 
-/*
+
 function bigBird (word) {
-  if (word.length === 2) { // this didn't work!
+  if (word.length === 3) { // this didn't work!
     return "Word to Big Bird!";
   }
 }
 console.log(bigBird("word"));
 console.log(bigBird("big"));
-*/
-
-function bigBird (word) {
-  if 
-}
 
 /*
  * #6
@@ -139,6 +134,16 @@ function bigBird (word) {
  * Console.log your result.
 */
 
+function isEqual (first, second) {
+  if (first === second) {
+    return "You look mahvelous!";
+  }
+  else {
+    return "I don't know who you are anymore.";
+  }
+}
+console.log(isEqual("string","string"));
+console.log(isEqual("first","second"));
 
 /*
  * #7
