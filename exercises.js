@@ -232,6 +232,16 @@ console.log(dirty30(10,11,12));
 */ 
 
 
+function evenStevens (num) {
+  if (num % 2 === 0) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+console.log(evenStevens(2));
+console.log(evenStevens(3));
 
 
 /*
