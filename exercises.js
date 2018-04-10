@@ -283,7 +283,11 @@ console.log(daClub(19,20));
 */ 
 
 function graduation (credits, thesis) {
-  if (credits >= 120 || thesis === true) {
+  if (credits >= 120 || thesis === true) { // the function still works even if you don't define the "thesis" with true or false 
+  //if(credits >= 120 || thesis) { // this still works --> Javascript will know that it's a boolean coming from the console.log
+  //^ console.log(graduation(90, "hello")) <-- this will still return true because there is something representing thesis (it's no longer a boolean, but a string, however, it still works)
+  //^ console.log(graduation(90, 0)) <-- 0 will evaluate to false (having a 0 as a value is one of the conditions/instances that it will become false)
+  // General rule: 0, null, NaN (not a number), empty string ("") and undefined will evalute to false / everything else will generally evaluate to truth 
       return "Congratulations on a job well done!";
   }
   else {
@@ -294,6 +298,7 @@ console.log(graduation(120, true));
 console.log(graduation(120, false));
 console.log(graduation(119, true));
 console.log(graduation(119, false));
+
 
 /*
  * #13
@@ -321,6 +326,10 @@ function moneyTrain (speed) {
 console.log(moneyTrain(40));
 console.log(moneyTrain(99));
 console.log(moneyTrain(101));
+//console.log(moneyTrain(false)); //This will return "You are riding Honolulu's Rail" <-- false becomes 0
+//console.log(moneyTrain(true)); //This will return "You are riding Honolulu's Rail" <-- true becomes 1
+//console.log(moneyTrain(undefined)); //This will return "Now you ballin' in the Shinkansen!" <-- (iterates through all the conditions and then hits the third condition) undefined is nothing and doesn't evaluate to anything (undefined equates to not putting any value at all)
+//console.log(moneyTrain(null)); //This will return "You are ridint Honolulu's Rail" <-- null becomes 0 (just like a false)
 
 /*
  * #14
@@ -338,20 +347,22 @@ console.log(moneyTrain(101));
 
 var budget = 22;
 var doughnutPrice = 2;
-var doughnutBought = 1;
+var doughnutBought = 0;
 
 function buyDoughnut () {          
   if (budget >= doughnutPrice) {      
-    budget -= doughnutPrice;      //Why doesn't this need to have a "return"?
+    budget -= doughnutPrice;      
+    //budget - doughnutPrice; // this doeesn't work
     doughnutBought++; 
   }
 }
-
-console.log(buyDoughnut());
+buyDoughnut();
+//console.log(buyDoughnut());
 console.log(budget);
 console.log(doughnutBought);
 
-console.log(buyDoughnut());
+buyDoughnut();
+//console.log(buyDoughnut());
 console.log(budget);
 console.log(doughnutBought);
 
@@ -359,14 +370,18 @@ console.log(doughnutBought);
 /*Create a function name dailySpecials which takes in a parameter: `special`.
 Inside the function, create a switch statement that will check the daily specials of your favorite restaurant (or make up your own daily specials for each day of the week.*/
 
-function dailySpecials (special) {
+//switch is best for one you have only one variable (rather than using the if/else function)
+
+function dailySpecials (special) { //parameters or variables inside of a function should be unique to the function and should not be the same as something outside of the function
   switch (special) {
     case "Monday":
+    //return "Apple Pie"; //if you substitute the breaks for a return, then you don't need to have the last return at the end of the function 
       pie = "Apple Pie";
-      break;
+      break; //a break is similar to a return - can be substituted for return, but be consistent
+      //break vs. return - when you hit a break, the function ends, then nothing will happen after the break
     case "Tuesday":
       pie = "Banana Cream Pie";
-      break;
+      break; 
     case "Wednesday":
       pie = "Haupia Pie";
       break;
@@ -376,8 +391,10 @@ function dailySpecials (special) {
     case "Friday":
       pie = "Pumpkin Pie";
       break;       
+    //default:                // best practice is to always include a default <-- catch all for if the value is not included in the cases
+      //menu = "No special";  // no break after the default since it's the last case and if nothing else matches then the default will be executed and there's nothing else after that
   }
- return "Today's special is " + pie + ".";
+ return "Today's special is " + pie + "."; //if you want a value to be returned outside of the function, you need to have a return
 }
 
 console.log(dailySpecials("Monday"));
@@ -418,10 +435,10 @@ var players = ["Player: 1", "Player: 2", "Player: 3", "Player: 4", "Player: 5"];
 
 //function player() {
   for (var i = 0; i<players.length; i++) {
-    console.log("Next player is " + players[i]);
+    console.log("Next player is " + players[i] + ".");
   }
 //}
-//console.log(player(); // With the function - returned an "undefined" at the end
+//console.log(player()); // With the function - returned an "undefined" at the end
 
 
 /* 
@@ -482,7 +499,7 @@ var west = [];
    //var east = [];
    //var west = [];
   for (var i = 0; i < ballers.length; i++) {
-    if (i%2 === 0) {
+    if (i%2 === 0) { // i%2 === 0 (i can be divisible by 2 and not yield a remainder --> to find the even numbers)
       east.push(ballers[i]);
     }
     else {
@@ -509,9 +526,11 @@ console.log(west);
 
   function subways (special) {
     for (var i = 0; i <special.length; i++) {
-      if (i%2 === 1) {
-        special.slice(i,1, "Classic Tuna");
-        special[i] = "Classic Tuna";
+      if (i%2 === 1) { // i%2 ===1 (i divisible by 2 and yields a remainder --> odd number)                    
+        special.slice(i,1); // starting index number, number of elements to remove
+        // special.slice(i,1, "Classic Tuna"); // starting index number, number of elements to remove, element to insert
+        // i = the odd numbered index item, whatever the value is remove the 1 element, replace with the new item
+        special[i] = "Classic Tuna"; // why does special[i] need to be defined when it is already specified in the special.splice(i, 1, "Classic Tuna")
       }
     }
     return special;
